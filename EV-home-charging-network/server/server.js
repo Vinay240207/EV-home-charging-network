@@ -1,4 +1,5 @@
 const express = require("express");
+const app = express();
 const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
@@ -10,6 +11,8 @@ const app = express();
 connectDB();
 
 app.use(cors());
+     origin: "*"
+}));
 app.use(express.json());
 
 app.get("/", (req, res) => {
